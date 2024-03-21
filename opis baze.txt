@@ -1,0 +1,22 @@
+baza.db
+Jednostavna baza sa 4 tabele:
+
+tabela items: šta se može naæi u ponudi restorana
+ID - primarni kljuè
+naziv - naziv artikla ili proizvoda/jela koje se može naæi u ponudi
+vrsta - hrana ili pice, da olakša filtriranje za cenovnik
+
+tabela cenovnik: koristi se za generisanje menija
+ID - primarni kljuè
+stavkamenija - strani kljuè, povezivanje sa tabelom items
+kolicina - kolièina ili porcija za koju je prikazana cena u meniju
+cena - cena za prikazanu kolièinu odreðene stavke iz menija
+
+tabela radnamesta: koristi se kao šifrarnik radnih mesta u "restoranu"
+ID - primarni kljuè
+naziv - naziv radnog mesta 
+
+tabela zaposleni: osnovni podaci o zaposlenima restorana
+ID- primarni kljuè
+ime , prezime, datum_rodj i adresa su osnovni podaci o zaposlenom
+radnomesto - strani kljuè za povezivanje sa tabelom radnamesta

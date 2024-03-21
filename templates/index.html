@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+<img class="banner" src="{{url_for('static',filename='banner.jpg')}}"/> 
+<h1>Restoran "Domaći rad"</h1>
+<h3>Ponuda dana:</h3>
+<section class="kolone">
+    
+    <article class="kolona">
+        <img src="{{url_for('static',filename='ponuda1.jpg')}}"/>
+        <h3>Komplet lepinja +<br/>Coca-Cola 0,25l</h3>
+        <p>Proverena kombinacija za početak ili kraj dana</p>
+        <h4>300 RSD</h4>
+
+    </article>
+    <article class="kolona">
+        <img src="{{url_for('static',filename='ponuda2.jpg')}}"/>
+        <h3>Ručak "taman!":</h3>
+        <ul>
+            <li>Kokošja | juneća supa ili čorbica </li>
+            <li>Jelo dana </li>
+            <li>Salatica (sezonska | šopska) </li>
+            
+        </ul>
+        <h4>400 RSD</h4>
+
+
+    </article>
+</section>
+{% endblock %}

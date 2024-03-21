@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Naša ponuda:</h1>
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>Jelo</th> <td> Porcija </th> <td> Cena </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jelo in hrana %}
+        <tr>
+            <th> {{jelo[0]}} </th> <td> {{jelo[1]}} </td><td> {{jelo[2]}} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <caption>Hrana</caption>
+    </table>
+</section>
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>Piće </th> <td> Kol. </td> <td> Cena </td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pice in pica %}
+        <tr>
+            <th> {{pice[0]}} </th> <td> {{pice[1]}} </td> <td> {{pice[2]}} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <caption>Piće</caption>
+    </table>
+</section>
+{% endblock %}

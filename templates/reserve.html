@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Pošaljite upit za rezervaciju!</h1>
+<form name="myForm" onsubmit="return validateForm()">
+  <div>
+    <label for="ime"><strong>*</strong> Unesite ime:</label><br/>
+    <input type="text" id="ime" name="ime" required onchange="trimValues(ime)"/><br/>
+    <strong class="poruka" id="imePoruka"></strong>
+  </div>
+  <div>
+    <label  for="prezime"><strong>*</strong>Unesite prezime:</label><br/>
+    <input type="text" id="prezime" name="prezime" required onchange="trimValues(prezime)"/><br/>
+    <strong class="poruka" id="prezimePoruka"></strong>
+  </div>
+  <div>
+    <label for="email"><strong>*</strong>Unesite mail adresu za potvrdu:</label><br/>
+    <input type="email" id="email" name="email" required onchange="trimValues(email)"/><br/>
+    <strong class="poruka" id="emailPoruka"></strong>
+  </div>
+  <div>
+    <label for="datum">Izaberite željeni datum:</label><br/>
+    <input type="date" id="datum" name="datum" value="{{datum}}"/><br/>
+    <strong class="poruka" id="datumPoruka"></strong>
+  </div>
+  <div>
+    <label for="mesta">Izaberite ili unesite broj mesta:</label><br/>
+    <input type="number" id="mesta" name="mesta" value="1" min="1" max="100" onchange="spojeniStolovi()"/></br>
+    <strong class="poruka" id="mestaPoruka"></strong>
+
+  </div>
+  <div id="spajanje" style="display: none;">
+    <label for="spojeni"> Spojeni stolovi?</label><br/>
+    <input type="checkbox" id="spojeni" name="spojeni"/>
+
+  </div>
+  <div>
+    <label for="pusaci"> Deo za pušače</label><br/>
+    <input type="radio" id="pusaci" name="pusenje" value="pusaci"/><br/>
+    <label for="nepusaci">Deo za nepušače</label><br/>
+    <input type="radio" id="nepusaci" name="pusenje" value="nepusaci" checked/>
+  </div>
+  <div>
+    <label for="res">Obriši podatke iz forme</label><br/>
+    <input type="reset" id="res" name="res" value="Reset" onclick="return clearForm()"/><br/>
+    <label for="rezervisi">Izvršite rezervaciju</label><br/>
+    <input type="submit" id="rezervisi" value="Rezerviši"/><br/>
+  </div>
+    <script src="{{url_for('static',filename='forma.js')}}"> </script>
+</form>
+
+    
+
+{% endblock %}
